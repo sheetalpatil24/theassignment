@@ -1,15 +1,19 @@
 #!/bin/bash -x
 
 echo "welcome to employeewage programme."
-ispresent=1;
-randomcheck=$((RANDOM%2));
+isparttime=1;
+isfulltime=2;
+emprateperhr=20;
+randomcheck =$((RANDOM%3));
 
-if [ $ispresent -eq $randomcheck ];
-then
-     emprateperhr=20;
-     emphrs=8;
-     salary=$(($emphrs*$emprateperhr));
-else
-    salary=0;
-fi
- 
+case $empcheck in
+$isfulltime)
+     emphrs=16;;
+$isparttime)
+     emphrs=8;;
+*)
+     emphrs=0 ;;
+esac
+   salary=$(($emphrs*$emprateperhr))
+echo $salary
+
