@@ -1,12 +1,15 @@
 #!/bin/bash -x
 
 echo "welcome to employeewage programme."
-ispresent=1
-randomcheck=$((RANDOM%2))
+ispresent=1;
+randomcheck=$((RANDOM%2));
 
-if [ $ispresent -eq $randomcheck ]
+if [ $ispresent -eq $randomcheck ];
 then
-echo "employee is present."
+     emprateperhr=20;
+     emphrs=8;
+     salary=$(($emphrs*$emprateperhr));
 else
-echo "employee is absent."
+    salary=0;
 fi
+ 
