@@ -6,14 +6,16 @@ isfulltime=2;
 emprateperhr=20;
 randomcheck =$((RANDOM%3));
 
-case $empcheck in
-$isfulltime)
-     emphrs=16;;
-$isparttime)
-     emphrs=8;;
-*)
-     emphrs=0 ;;
-esac
-   salary=$(($emphrs*$emprateperhr))
+if [ $isfulltime -eq $randomcheck ];
+then
+    emphrs=16;
+elif [ $isparttime -eq $randomcheck ];
+then
+    emphrs=8;
+else
+    emphrs=0;
+fi
+salary=$(($emphrs*$emprateperhr))
+
 echo $salary
 
